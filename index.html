@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OBSYD – Design & Digital Studio</title>
+  <meta name="description"
+    content="OBSYD is a futuristic design and digital studio crafting cutting-edge digital experiences." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@1,400;1,600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-brand">OBSYD</div>
+  </div>
+
+  <!-- Dust particle canvas — sits behind all content -->
+  <canvas id="dust-canvas" aria-hidden="true"></canvas>
+
+  <!-- ======= NAVIGATION ======= -->
+  <header class="site-header">
+    <nav class="navbar" id="main-nav" role="navigation" aria-label="Main navigation">
+      <!-- Brand -->
+      <a href="#home" class="nav-brand magnetic-element" aria-label="OBSYD Home">
+        <span class="brand-text">OBSYD</span>
+      </a>
+
+      <!-- Nav Links -->
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#home" class="nav-link active magnetic-element" id="nav-home">Home</a></li>
+        <li><a href="#work" class="nav-link magnetic-element" id="nav-work">Work</a></li>
+        <li><a href="#portfolio" class="nav-link magnetic-element" id="nav-portfolio">Cases</a></li>
+        <li><a href="#services" class="nav-link magnetic-element" id="nav-services">Services</a></li>
+        <li><a href="#about" class="nav-link magnetic-element" id="nav-about">About Us</a></li>
+        <li><a href="#contact" class="nav-link magnetic-element" id="nav-contact">Contact</a></li>
+      </ul>
+
+      <!-- Hamburger (mobile) -->
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ======= HERO SECTION (placeholder) ======= -->
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="cube-follower" id="cube-follower">
+          <div class="cube-wrapper">
+            <div class="cube" id="obsyd-cube">
+              <div class="cube-face front"></div>
+              <div class="cube-face back"></div>
+              <div class="cube-face right"></div>
+              <div class="cube-face left"></div>
+              <div class="cube-face top"></div>
+              <div class="cube-face bottom"></div>
+            </div>
+          </div>
+        </div>
+        <h1 class="hero-logo">OBSYD</h1>
+        <p class="hero-tagline">Design <span class="luxury-serif">beyond</span> dimension.</p>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="section work-section" id="work">
+      <!-- Particle container overlays the left side -->
+      <div class="work-particles-container" id="work-particles-container">
+        
+        <!-- The fractured glowing blue cube for the work section -->
+        <div class="cube-follower" id="work-cube-follower">
+          <div class="cube-wrapper">
+            <div class="cube work-cube" id="work-cube">
+              <div class="cube-face work-face front"></div>
+              <div class="cube-face work-face back"></div>
+              <div class="cube-face work-face right"></div>
+              <div class="cube-face work-face left"></div>
+              <div class="cube-face work-face top"></div>
+              <div class="cube-face work-face bottom"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Canvas for the shattered cube particles -->
+        <canvas id="cube-particles"></canvas>
+      </div>
+
+      <div class="work-content">
+        <div class="work-header">
+          <h2>Technologies</h2>
+          <p>Our digital arsenal</p>
+        </div>
+      <div class="tech-grid" id="tech-grid">
+          
+          <div class="tech-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+            <div class="card-letter">C</div>
+            <div class="tech-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" fill="currentColor" />
+              </svg>
+            </div>
+            <div class="tech-name">CYBERA</div>
+            <div class="card-divider"></div>
+            <div class="card-desc">Advanced data processing matrix.<br>Optimized for structural integrity.</div>
+          </div>
+          
+          <div class="tech-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+            <div class="card-letter">Q</div>
+            <div class="tech-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="4" fill="none" stroke="currentColor" stroke-width="2" />
+                <text x="5.5" y="16.5" font-weight="900" font-family="Inter" font-size="11" fill="currentColor">JS</text>
+              </svg>
+            </div>
+            <div class="tech-name">QUANTUM</div>
+            <div class="card-divider"></div>
+            <div class="card-desc">High-speed execution core.<br>Asynchronous event looping.</div>
+          </div>
+          
+          <div class="tech-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+            <div class="card-letter">N</div>
+            <div class="tech-icon">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="2.5" fill="currentColor" />
+                <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" fill="none" stroke-width="1.5" transform="rotate(30 12 12)" />
+                <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" fill="none" stroke-width="1.5" transform="rotate(90 12 12)" />
+                <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" fill="none" stroke-width="1.5" transform="rotate(150 12 12)" />
+              </svg>
+            </div>
+            <div class="tech-name">NEURAL</div>
+            <div class="card-divider"></div>
+            <div class="card-desc">Reactive interface networks.<br>State-driven UI rendering.</div>
+          </div>
+
+          <div class="tech-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+            <div class="card-letter">O</div>
+            <div class="tech-icon">
+              <svg viewBox="0 0 24 24">
+                <polygon points="12,2 22,7.5 22,16.5 12,22 2,16.5 2,7.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+                <circle cx="12" cy="12" r="3" fill="currentColor" />
+              </svg>
+            </div>
+            <div class="tech-name">ORION</div>
+            <div class="card-divider"></div>
+            <div class="card-desc">Server-side runtime environment.<br>Scalable node clustering.</div>
+          </div>
+          
+          <div class="tech-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+            <div class="card-letter">H</div>
+            <div class="tech-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" fill="currentColor" opacity="0.8" />
+                <path d="M2 17l10 5 10-5M2 12l10 5 10-5" fill="none" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </div>
+            <div class="tech-name">HELIO</div>
+            <div class="card-divider"></div>
+            <div class="card-desc">Hardware-accelerated graphics.<br>Dimensional computing.</div>
+          </div>
+
+          <div class="tech-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+            <div class="card-letter">V</div>
+            <div class="tech-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 4C6.48 4 2 5.79 2 8s4.48 4 10 4 10-1.79 10-4-4.48-4-10-4zm0 6c-5.52 0-10 1.79-10 4s4.48 4 10 4 10-1.79 10-4-4.48-4-10-4zm0 6c-5.52 0-10 1.79-10 4s4.48 4 10 4 10-1.79 10-4-4.48-4-10-4z" fill="none" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </div>
+            <div class="tech-name">VEGA</div>
+            <div class="card-divider"></div>
+            <div class="card-desc">Relational data warehousing.<br>Persistent state storage.</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Showcase -->
+    <section class="section portfolio-section" id="portfolio">
+      <div class="portfolio-header">
+        <h2>Case <span class="luxury-serif">Studies</span></h2>
+        <p>Our Recent Work</p>
+        <div class="scroll-indicator"><span>Scroll to explore</span> <span class="arrow">→</span></div>
+      </div>
+      <div class="portfolio-gallery">
+        <div class="portfolio-item" data-tilt data-tilt-max="10" data-tilt-speed="400">
+          <div class="portfolio-image">
+            <img src="portfolio-1.png" alt="Neon Genesis — E-commerce Experience" loading="lazy" />
+          </div>
+          <div class="portfolio-info">
+            <h3>Neon Genesis</h3>
+            <p>E-commerce Experience</p>
+          </div>
+        </div>
+        <div class="portfolio-item" data-tilt data-tilt-max="10" data-tilt-speed="400">
+          <div class="portfolio-image">
+            <img src="portfolio-2.png" alt="Vectra API — Developer Portal" loading="lazy" />
+          </div>
+          <div class="portfolio-info">
+            <h3>Vectra API</h3>
+            <p>Developer Portal</p>
+          </div>
+        </div>
+        <div class="portfolio-item" data-tilt data-tilt-max="10" data-tilt-speed="400">
+          <div class="portfolio-image">
+            <img src="portfolio-3.png" alt="Cybera Secure — Fintech App Design" loading="lazy" />
+          </div>
+          <div class="portfolio-info">
+            <h3>Cybera Secure</h3>
+            <p>Fintech App Design</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section services-section" id="services">
+      <div class="services-container">
+        <div class="services-header">
+          <h2><span class="luxury-serif">Services</span></h2>
+          <p>What We Offer</p>
+        </div>
+        <div class="services-list">
+          <div class="service-item">
+            <div class="service-icon">✦</div>
+            <div class="service-content">
+              <h3>UI/UX Design</h3>
+              <p>Crafting intuitive and futuristic interfaces for modern users.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">◇</div>
+            <div class="service-content">
+              <h3>Creative Web Development</h3>
+              <p>Bringing designs to life with cutting-edge front-end technologies.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">◈</div>
+            <div class="service-content">
+              <h3>Brand Identity</h3>
+              <p>Establishing digital presence with unique visual branding.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section about-section" id="about">
+      <div class="about-container">
+
+
+        <div class="about-header">
+          <p class="about-subtitle">ABOUT US</p>
+          <h2 class="about-title">MEET <span class="luxury-serif">OBSYD</span></h2>
+        </div>
+
+        <div class="about-editorial-layout">
+          
+          <div class="about-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1" data-tilt-perspective="1000">
+            <h3>Our Story</h3>
+            <p>OBSYD started from passion and curiosity. The founder began learning HTML and web creation from scratch, driven by a strong interest in technology, design, and creativity. This inspired the creation of OBSYD.</p>
+          </div>
+          
+          <div class="about-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1" data-tilt-perspective="1000">
+            <h3>Our Vision</h3>
+            <p>While exploring websites in the local market, it became clear that many companies lacked strong design, modern interfaces, and unique branding online. We are here to change that narrative.</p>
+          </div>
+          
+          <div class="about-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1" data-tilt-perspective="1000">
+            <h3>What We Believe</h3>
+            <p>OBSYD focuses on:</p>
+            <ul class="about-list">
+              <li>Modern website creation</li>
+              <li>Creative branding</li>
+              <li>Custom digital experiences</li>
+              <li>Strong visual identity</li>
+            </ul>
+          </div>
+          
+          <div class="about-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1" data-tilt-perspective="1000">
+            <h3>Our Mission</h3>
+            <p>The goal of the agency is to create clean, modern, and visually unique websites that reflect the identity of each company instead of generic templates.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact-section" id="contact">
+      <div class="contact-container">
+        <div class="contact-header">
+          <h2>Get <span class="luxury-serif">In</span> Touch</h2>
+          <p>Start a Project</p>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="form-group">
+            <label for="name" class="sr-only">Your Name</label>
+            <input type="text" id="name" placeholder="Name" required autocomplete="name" />
+            <div class="input-glow"></div>
+          </div>
+          <div class="form-group">
+            <label for="email" class="sr-only">Email Address</label>
+            <input type="email" id="email" placeholder="Email" required autocomplete="email" />
+            <div class="input-glow"></div>
+          </div>
+          <div class="form-group">
+            <label for="message" class="sr-only">Your Message</label>
+            <textarea id="message" rows="5" placeholder="Message" required></textarea>
+            <div class="input-glow"></div>
+          </div>
+          <button type="submit" class="submit-btn magnetic-element" data-tilt data-tilt-max="5" data-tilt-speed="400">
+            <span>Send Message</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>OBSYD</h2>
+        <p>Design <span class="luxury-serif">beyond</span> dimension.</p>
+      </div>
+      <div class="footer-socials">
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer">Dribbble</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 OBSYD Studio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Animation Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.35/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  
+  <script src="main.js"></script>
+
+  <!-- Toast for form feedback -->
+  <div class="form-toast" id="form-toast">✦ Message sent successfully</div>
+</body>
+
+</html>
